@@ -1,5 +1,4 @@
-#N canvas 68 23 567 421 12;
-#X obj 379 84 adc~;
+#N canvas 68 23 742 421 12;
 #X obj 349 391 dac~;
 #X obj 333 120 channelst;
 #X text 416 150 gain knob;
@@ -17,7 +16,13 @@ toggle 0 \, 1 Str/mono toggle 0 \, 1;
 | | | | low noise | | | | `______ ____________________ ____ ______'
 | | / [] [] \  | | / () () \  | !______/___________________________________!
 ;
-#X connect 0 0 2 4;
-#X connect 0 1 2 5;
-#X connect 2 0 1 0;
-#X connect 2 1 1 1;
+#X obj 412 46 osc~ 440;
+#X obj 497 47 phasor~ 440;
+#X obj 448 85 *~ 0.25;
+#X obj 381 84 *~ 0.5;
+#X connect 1 0 0 0;
+#X connect 1 1 0 1;
+#X connect 8 0 11 0;
+#X connect 9 0 10 0;
+#X connect 10 0 1 5;
+#X connect 11 0 1 4;
